@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.example.seba.learnenglish.Activity.AddActivity">
+
+
+
+    <EditText
+        android:id="@+id/search_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wpisz szukane słówko"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"
+        />
+
+
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Szukaj"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="searchWord"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white">
+
+        <RadioButton
+            android:text="Polskie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonPL"
+            android:textColor="@color/white"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            android:buttonTint="@color/white"
+            android:backgroundTint="@color/white"
+            />
+
+        <RadioButton
+            android:text="Angielskie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonENG"
+            android:textColor="@color/white"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            android:buttonTint="@color/white"
+
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="szukane słówko"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/foundWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="znalezione słówko"
+        android:visibility="gone"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="70dp"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        />
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">LearnEnglish</string>
+    <string name="show_word">Pokaż słówka</string>
+    <string name="add_word">Dodaj tłumaczenie</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="settings">Ustawienia</string>
+    <string name="find_word">Znajdź słowo</string>
+    <string name="repeat_word">Ucz się</string>
+    <string name="no_found">Nie znaleziono</string>
+
+    
+    <!--Czasy angielskie-->
+    <!--Present Simple-->
+    <string name="application1">1. Mówiąc o czynnościach typowych, rutynowych, powtarzających się</string>
+    <string name="application2">2. Opisujemy rzeczy, które zawsze są prawdziwe (zjawiska)</string>
+    <string name="application3">3. Czynności dziejące się przez dłuższy czas</string>
+    <string name="application4">4. Opisywanie, streszczanie filmów, książek, itp.</string>
+
+    <!--Present Continuous-->
+    <string name="application5">1. Opisując czynności, które dzieją się w momencie mówienia o nich.</string>
+    <string name="application6">2. Używamy go także do opisu czynności, które nie muszą trwać dokładnie w chwili mówienia o nich, ale trwają dłuższy czas</string>
+    <string name="application8">3. Jeśli coś zaplanowaliśmy</string>
+    <string name="application9">4. Jeśli opisujemy czynność powtarzającą się lecz nie jest to "stała" cecha człowieka czy rzeczy</string>
+
+    <!--Past Simple-->
+    <string name="application10">1. Jednorazowa czynność w przeszłości</string>
+    <string name="application11">2. Krótkie czynności, które miały miejsce jedna po drugiej</string>
+    <string name="application12">3. Przeszłe zwyczaje, nawyki (mineły)</string>
+
+    <!--Past Continuous-->
+    <string name="application13">1. Do mówienia o wydarzeniach trwających w określonym momencie w przeszłości, gdy byliśmy w trakcie wykonywania jakiejś czynności:</string>
+    <string name="application14">2. Bardzo często do opisu, kiedy dana czynność trwała, używamy drugiego zdania w Past Simple</string>
+    <string name="application15">3. Możemy także wyrazić dwie czynności, które trwały jednocześnie - wtedy obydwie są w Past Continuous</string>
+    <string name="application16">4. Czynność, która w sposób ciągły wypełniała jakiś okres w przeszłości lub opis tła wydarzeń</string>
+
+    <!--Future Simple-->
+    <string name="application17">1. Jeśli podejmujemy decyzję (zazwyczaj jest to spontaniczna decyzja)</string>
+    <string name="application18">2. Uważamy jakieś wydarzenie za pewne lub bardzo prawdopodobne</string>
+    <string name="application19">3. Oferując pomoc, prosząc o coś, składając obietnicę</string>
+
+    <!--Future Continuous-->
+    <string name="application20">1. Ciągłej czynności, która będzie (lub nie będzie) się działa w przyszłości</string>
+    <string name="application21">2. Propozycja pomocy (lub prośba o pomoc) z wyraźnym zaznaczeniem, że czynność ma być wykonana "przy okazji"</string>
+    <string name="application22"></string>
+    <string name="application23"></string>
+    <string name="application24"></string>
+
+    
+</resources>

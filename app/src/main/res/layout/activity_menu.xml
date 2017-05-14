@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context="com.example.seba.learnenglish.Activity.MenuActivity"
+    android:background="@android:color/black"
+    >
+    <Button
+        android:id="@+id/add_words"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/add_word"
+        android:textSize="30dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:onClick="addWord"
+        />
+
+    <Button
+        android:id="@+id/show_words"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:text="@string/show_word"
+        android:textSize="30dp"
+        android:onClick="displayWords"
+        android:layout_below="@+id/add_words"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:text="@string/settings"
+        android:textSize="30dp"
+        android:onClick="settings"
+        android:layout_below="@+id/findWord"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:id="@+id/findWord"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:text="@string/find_word"
+        android:textSize="30dp"
+        android:onClick="findWord"
+        android:layout_below="@+id/show_words"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/learn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/black"
+        android:text="Powtórz czasy"
+        android:textSize="40dp"
+        android:onClick="learnTenses"
+        android:textStyle="bold"
+        android:layout_above="@+id/repeatWords"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <Button
+        android:id="@+id/repeatWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/black"
+        android:text="@string/repeat_word"
+        android:textSize="40dp"
+        android:onClick="learnTenses"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

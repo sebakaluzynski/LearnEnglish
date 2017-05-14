@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.example.seba.learnenglish.Activity.AddActivity">
+
+    <TextView
+        android:id="@+id/id_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="99"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:layout_marginTop="5dp"/>
+
+
+    <EditText
+        android:id="@+id/word_pl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Edytowane słowo - pl"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        />
+
+    <EditText
+        android:id="@+id/word_eng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Edytowane słowo - eng"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/white"
+        />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="OK"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="sendEditedWord"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
+
+
+
+</LinearLayout>
