@@ -46,7 +46,7 @@ public class AddActivity extends Activity {
         String wordPL = polishWord.getText().toString();
         String wordENG = englishWord.getText().toString();
 
-//        Log.d("msg", "wordPL: " +wordPL);
+        Log.d("msg", "wordPL: " +wordPL);
 //        Log.d("msg", "wordENG: " +wordENG);
 //        Log.d("msg", "wordENG: " + wordPL.replaceAll("a", ""));
 
