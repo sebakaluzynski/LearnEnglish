@@ -21,15 +21,6 @@
         android:layout_toLeftOf="@+id/toggleButton"
         android:layout_toStartOf="@+id/toggleButton" />
 
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Włączony"
-        android:id="@+id/toggleButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textColorHighlight="@android:color/holo_red_dark" />
 
     <Button
         android:id="@+id/buttonTest"
