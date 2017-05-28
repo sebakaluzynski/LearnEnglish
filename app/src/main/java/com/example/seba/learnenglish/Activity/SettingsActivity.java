@@ -42,9 +42,12 @@ public class SettingsActivity extends Activity {
     public void setNotifications(View view) {
         Calendar calendar = Calendar.getInstance();
 
+//        calendar.set(Calendar.HOUR_OF_DAY,18);
+//        calendar.set(Calendar.MINUTE,20);
+//        calendar.set(Calendar.SECOND,30);
         calendar.set(Calendar.HOUR_OF_DAY,18);
-        calendar.set(Calendar.MINUTE,20);
-        calendar.set(Calendar.SECOND,30);
+        calendar.set(Calendar.MINUTE,30);
+        calendar.set(Calendar.SECOND,0);
 
         Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
 
