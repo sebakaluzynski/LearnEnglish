@@ -35,7 +35,6 @@ public class SettingsActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_settings);
 
-
         notificationButton = (Button) findViewById(R.id.buttonTest);
     }
 
