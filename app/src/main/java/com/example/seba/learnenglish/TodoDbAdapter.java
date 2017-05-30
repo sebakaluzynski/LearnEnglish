@@ -176,4 +176,11 @@ public class TodoDbAdapter {
     }
 
 
+    public Cursor getRowRandom() {
+        Cursor cursor = this.db.query(DB_TODO_TABLE + " Order BY RANDOM() LIMIT 1",
+                new String[] { "*" }, null, null, null, null, null);
+        return cursor;
+    }
+
+
 }

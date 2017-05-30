@@ -44,8 +44,8 @@ public class SettingsActivity extends Activity {
 //        calendar.set(Calendar.HOUR_OF_DAY,18);
 //        calendar.set(Calendar.MINUTE,20);
 //        calendar.set(Calendar.SECOND,30);
-        calendar.set(Calendar.HOUR_OF_DAY,18);
-        calendar.set(Calendar.MINUTE,30);
+        calendar.set(Calendar.HOUR_OF_DAY,22);
+        calendar.set(Calendar.MINUTE,2);
         calendar.set(Calendar.SECOND,0);
 
         Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
