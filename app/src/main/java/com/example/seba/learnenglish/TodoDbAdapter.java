@@ -18,6 +18,7 @@ public class TodoDbAdapter {
 
     private static final int DB_VERSION = 2;
     private static final String DB_NAME = "w.db";
+//    private static final String DB_NAME = "word.db";
     private static final String DB_TODO_TABLE = "WORD";
 
     public static final String KEY_ID = "_id";

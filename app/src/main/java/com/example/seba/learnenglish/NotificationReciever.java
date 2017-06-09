@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
 
 import com.example.seba.learnenglish.Activity.RepeatingActivity;
@@ -31,5 +32,9 @@ public class NotificationReciever extends BroadcastReceiver {
                 .setContentText("Notification text")
                 .setAutoCancel(true);
         notificationManager.notify(100, builder.build());
+
+        Vibrator vibrator = (Vibrator)context
+                .getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(1000);
     }
 }

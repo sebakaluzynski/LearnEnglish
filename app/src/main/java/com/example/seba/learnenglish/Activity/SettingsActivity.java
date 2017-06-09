@@ -1,28 +1,19 @@
 package com.example.seba.learnenglish.Activity;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.Dialog;
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-
-import java.sql.Time;
 import java.util.Calendar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.ToggleButton;
-
 import com.example.seba.learnenglish.NotificationReciever;
 import com.example.seba.learnenglish.R;
 
@@ -50,7 +41,6 @@ public class SettingsActivity extends Activity {
             public void onClick(View v) {
                 openTimePickerDialog(false);
             }});
-
     }
 
     private void openTimePickerDialog(boolean is24r){
@@ -78,15 +68,18 @@ public class SettingsActivity extends Activity {
             if(calSet.compareTo(calNow) <= 0){
                 calSet.add(Calendar.DATE, 1);
             }
+            setTimeOnTextView(hourOfDay,minute);
             setAlarm(calSet);
         }};
-
 
     private void setAlarm(Calendar targetCal){
         Intent intent = new Intent(getBaseContext(), NotificationReciever.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 100, intent, 0);
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+    }
 
+    public void setTimeOnTextView(int hour, int min){
+        timeClock.setText(String.valueOf(hour)+":"+String.valueOf(min));
     }
 }
