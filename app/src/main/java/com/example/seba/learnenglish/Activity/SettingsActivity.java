@@ -1,17 +1,26 @@
 package com.example.seba.learnenglish.Activity;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+
+import java.sql.Time;
 import java.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextClock;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.ToggleButton;
 
 import com.example.seba.learnenglish.NotificationReciever;
@@ -20,13 +29,10 @@ import com.example.seba.learnenglish.R;
 public class SettingsActivity extends Activity {
 
     private Button notificationButton;
-    private ToggleButton alarmToggle;
-    private AlarmManager alarmManager;
-    private static SettingsActivity inst;
+    private TextView timeClock;
 
-    public static SettingsActivity instance() {
-        return inst;
-    }
+    TimePickerDialog timePickerDialog;
+    Calendar calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +42,51 @@ public class SettingsActivity extends Activity {
         setContentView(R.layout.activity_settings);
 
         notificationButton = (Button) findViewById(R.id.buttonTest);
+        timeClock = (TextView)findViewById(R.id.timeClock);
+        calendar = Calendar.getInstance();
+
+        notificationButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openTimePickerDialog(false);
+            }});
+
     }
 
-    public void setNotifications(View view) {
+    private void openTimePickerDialog(boolean is24r){
         Calendar calendar = Calendar.getInstance();
+        timePickerDialog = new TimePickerDialog(
+                this,
+                onTimeSetListener,
+                calendar.get(Calendar.HOUR_OF_DAY),
+                calendar.get(Calendar.MINUTE),
+                is24r);
+        timePickerDialog.setTitle("Set Alarm Time");
+        timePickerDialog.show();
+    }
 
-//        calendar.set(Calendar.HOUR_OF_DAY,18);
-//        calendar.set(Calendar.MINUTE,20);
-//        calendar.set(Calendar.SECOND,30);
-        calendar.set(Calendar.HOUR_OF_DAY,22);
-        calendar.set(Calendar.MINUTE,2);
-        calendar.set(Calendar.SECOND,0);
+    TimePickerDialog.OnTimeSetListener onTimeSetListener
+            = new TimePickerDialog.OnTimeSetListener(){
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            Calendar calNow = Calendar.getInstance();
+            Calendar calSet = (Calendar) calNow.clone();
+            calSet.set(Calendar.HOUR_OF_DAY, hourOfDay);
+            calSet.set(Calendar.MINUTE, minute);
+            calSet.set(Calendar.SECOND, 0);
+            calSet.set(Calendar.MILLISECOND, 0);
+            if(calSet.compareTo(calNow) <= 0){
+                calSet.add(Calendar.DATE, 1);
+            }
+            setAlarm(calSet);
+        }};
 
-        Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+    private void setAlarm(Calendar targetCal){
+        Intent intent = new Intent(getBaseContext(), NotificationReciever.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 100, intent, 0);
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
 
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
     }
 }

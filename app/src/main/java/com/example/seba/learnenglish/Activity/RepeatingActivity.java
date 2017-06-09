@@ -20,8 +20,8 @@ public class RepeatingActivity extends Activity{
         setContentView(R.layout.activity_repeating);
 
         fillListViewData();
-
-        //Log.d("msg-random", " " + todoDbAdapter.getRowRandom());
+        int id = 80;
+        Log.d("msg-random", " " + todoDbAdapter.getWord(id).getWord());
     }
 
     private void fillListViewData() {
